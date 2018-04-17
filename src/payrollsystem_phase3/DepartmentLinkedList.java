@@ -79,7 +79,7 @@ class DepartmentLinkedList
 
     /**
      * The add method adds an element to the end of the list.
-     * @param e The value to add to the end of the list.
+     * @param d The value to add to the end of the list.
      */
     public void add(Department d)
     {
@@ -99,7 +99,7 @@ class DepartmentLinkedList
 
     /**
      * The add method adds an element at a position.
-     * @param e The element to add to the list.
+     * @param d The element to add to the list.
      * @param index The position at which to add the element.
      * @exception IndexOutOfBoundsException When index is out of bounds.
      */
@@ -296,6 +296,17 @@ class DepartmentLinkedList
     public Department find(int deptID)
     {
         // provide implementation
-    }
 
+        Node ref = first;
+        while (ref != null)
+        {
+            if (ref .value.getDepartmentID() == deptID)
+            {
+                System.out.println(ref.value + " ");
+                return ref.value;
+            }
+            ref = ref.next;
+        }
+        return null;
+    }
 }
