@@ -1,0 +1,58 @@
+//EmployeeToDepartment
+
+public void addEmployeeToDepartment (String deptName, Employee empObject)
+
+    {
+
+        // provide implementation
+
+        Department foundDept = listOfDepartments.find(deptName);
+
+
+
+        if( foundDept != null )
+
+        {
+
+            if( empObject instanceof HourlyEmployee )
+
+                foundDept.addEmployee( new HourlyEmployee((HourlyEmployee)empObject));
+
+            else if( empObject instanceof SalariedEmployee )
+
+                foundDept.addEmployee( new SalariedEmployee((SalariedEmployee)empObject));
+
+        }
+
+
+
+    }
+
+
+//Department Find
+
+public Department find(String deptName)
+
+    {
+
+        Node element = first;
+
+
+
+        while( element != null )
+
+        {
+
+            if( element.value.getDepartmentName().equalsIgnoreCase(deptName) )
+
+                return element.value;
+
+            element = element.next;
+
+        }
+
+        // complete the implementation
+
+        return null;
+
+    }

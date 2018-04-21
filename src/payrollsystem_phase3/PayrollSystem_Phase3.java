@@ -69,16 +69,8 @@ public class PayrollSystem_Phase3
 
         JOptionPane.showMessageDialog(null, "Quitting application.");
 
-        String[] linesOfData = data.split("\n");
-        for (String line: linesOfData){
-            try{
-                processLineOfData(line);
-            }catch(Exception e){
-            }
-        }
+
         System.exit(0);
-
-
     }
 
 
@@ -178,45 +170,12 @@ public class PayrollSystem_Phase3
         }
     }
 
-    /**
-     * finish the switches with thhe method to handle that type.
-     * @param line
-     * @throws Exception
-     */
+
     private static void processLineOfData(String line) throws Exception
     {
 
-        String[] lineData = line.split(",");
-        String dept = lineData[0];
 
-        switch (dept){
-            case "D":
-                handleDepartment(lineData);
-                break;
-            case "S":
-                handleSalEmp(lineData);
-                break;
-            case "H":
 
-                break;
-            case "M":
-
-                break;
-            default:
-                System.out.print("Invalid department");
-                break;
-        }
-
-        // provide implementation
-    }
-
-    /**
-     *
-     * @param lineData
-     */
-    private static void handleDepartment(String[] lineData){
-        Department dept = new Department();
-        addDepartment(dept);
     }
 
 
@@ -230,12 +189,32 @@ public class PayrollSystem_Phase3
      * periodBeginDate:periodEndDate:grossAmount:taxAmount:bonusAmount
      * @return An equivalent ArrayList of Paycheck objects.
      */
-
-
     public static ArrayList<Paycheck> parseEmployeePaychecks(int empID, String paycheckData)
     {
 
-        // provide implementation
+        String str = "...";
+        List <String> PaycheckElements= Arrays.asList(str.split(","));;
+        Scanner read = new Scanner(paycheckData);
+
+        String s="";
+        while (true) {
+            s=read.nextLine();
+            if (s.equals("")) {
+                break;
+            }else{
+                read.add(s);
+            }
+        }
+
+// System.out.println(PaycheckElements);
+        for(int i=0; i<PaycheckElements.size(); i++){
+            int gross = Integer.parseInt(PaycheckElements.get(2));
+            int bonus = Integer.parseInt(PaycheckElements.get(4));
+            int tax = Integer.parseInt(PaycheckElements.get(3));
+            int val = (gross - tax + bonus);
+
+        }
+        return;
     }
 
 }

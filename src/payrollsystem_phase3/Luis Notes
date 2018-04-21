@@ -1,0 +1,216 @@
+[7:29 PM, 4/16/2018] Luis Granados: /* EXAMPLE INPUT
+department name id man1 emp1 emp2 emp3#
+salariedEmp name id dob sal#
+hourlyEmp name id dob rate#
+manager name id did sal#
+hourlyEmp name id dob rate#
+manager name id did sal#
+hourlyEmp name id dob rate#
+manager name id did sal#
+salariedEmp name id dob sal#
+hourlyEmp name id dob rate#
+manager name id did sal#
+salariedEmp name id dob sal#
+hourlyEmp name id dob rate#
+manager name id did sal#
+salariedEmp name id dob sal#
+hourlyEmp name id dob rate#
+manager name id did sal#
+*/
+
+
+String[] linesOfData = data.split("\n");
+for (String line: linesOfData){
+    try{
+        processLineOfData(line);
+    }catch(Exception e){
+        System.out.print(e.printStackTrace());
+    }
+}
+
+processLineOfData(String line){
+    Sring[] lineData = line.split(",");
+    String dept = lineData[0];
+
+    switch (dept){
+        case "D":
+            handleDepartment(lineData);
+        break;
+        case "S":
+            handleSalEmp(lineData);
+        break;
+        case "H":
+
+        break;
+        case "M":
+
+        break;
+        default:
+         System.out.print("Invalid department");
+        break;
+    }
+}
+
+handleDepartment(String[] lineData){
+    Department dept = new Department(lineData[1], lineData[2]);
+    addDepartment(dept);
+}
+[7:53 PM, 4/16/2018] Luis Granados: String[] linesOfData = data.split("\n");
+for (String line: linesOfData){
+    try{
+        processLineOfData(line);
+    }catch(Exception e){
+        System.out.print(e.printStackTrace());
+    }
+}
+
+processLineOfData(String line){
+    Sring[] lineData = line.split(",");
+    String type = lineData[0];
+
+    switch (type){
+        case "D":
+            Department dept = new Department(lineData[1], lineData[2]);
+            company.addDepartment(dept);
+        break;
+        case "S":
+            handleSalEmp(lineData);
+        break;
+        case "H":
+
+        break;
+        case "M":
+
+        break;
+        default:
+         System.out.print("Invalid department");
+        break;
+    }
+}
+
+handleDepartment(String[] lineData){
+    Department dept = new Department(lineData[1], lineData[2]);
+    company.addDepartment(dept);
+}
+[7:58 PM, 4/16/2018] Luis Granados: String data = file.contents //NOT REAL METHOD
+
+String[] linesOfData = data.split("\n");
+for (String line: linesOfData){
+    try{
+        processLineOfData(line);
+    }catch(Exception e){
+        System.out.print(e.printStackTrace());
+    }
+}
+
+processLineOfData(String line){
+    Sring[] lineData = line.split(",");
+    String type = lineData[0];
+
+    switch (type){
+        case "D":
+            handleDepartment(String[] lineData);
+        break;
+        case "S":
+            handleSalEmp(lineData);
+        break;
+        case "H":
+            handleHourlyEmp(lineData);
+        break;
+        case "M":
+            handleManager(lineData);
+        break;
+        default:
+         System.out.print("Invalid department");
+        break;
+    }
+}
+
+handleDepartment(String[] lineData){
+    Department dept = new Department(lineData[1], lineData[2]);
+    company.addDepartment(dept);
+}
+
+handleSalEmp(String[] lineData){
+    //YOUR CODE HERE
+}
+handleHourlyEmp(String[] lineData){
+    //YOUR CODE HERE
+}
+handleManager(String[] lineData){
+    //YOUR CODE HERE
+}
+
+
+
+
+PseudoCoda
+
+/* EXAMPLE INPUT
+department name id man1 emp1 emp2 emp3#
+salariedEmp name id dob sal#
+hourlyEmp name id dob rate#
+manager name id did sal#
+hourlyEmp name id dob rate#
+manager name id did sal#
+hourlyEmp name id dob rate#
+manager name id did sal#
+salariedEmp name id dob sal#
+hourlyEmp name id dob rate#
+manager name id did sal#
+salariedEmp name id dob sal#
+hourlyEmp name id dob rate#
+manager name id did sal#
+salariedEmp name id dob sal#
+hourlyEmp name id dob rate#
+manager name id did sal#
+*/
+
+String data = file.contents //NOT REAL METHOD
+
+String[] linesOfData = data.split("\n");
+for (String line: linesOfData){
+    try{
+        processLineOfData(line);
+    }catch(Exception e){
+        System.out.print(e.printStackTrace());
+    }
+}
+
+processLineOfData(String line){
+    Sring[] lineData = line.split(",");
+    String type = lineData[0];
+
+    switch (type){
+        case "D":
+            handleDepartment(String[] lineData);
+        break;
+        case "S":
+            handleSalEmp(lineData);
+        break;
+        case "H":
+            handleHourlyEmp(lineData);
+        break;
+        case "M":
+            handleManager(lineData);
+        break;
+        default:
+         System.out.print("Invalid department");
+        break;
+    }
+}
+
+handleDepartment(String[] lineData){
+    Department dept = new Department(lineData[1], lineData[2]);
+    company.addDepartment(dept);
+}
+
+handleSalEmp(String[] lineData){
+    //YOUR CODE HERE
+}
+handleHourlyEmp(String[] lineData){
+    //YOUR CODE HERE
+}
+handleManager(String[] lineData){
+    //YOUR CODE HERE
+}
